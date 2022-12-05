@@ -39,11 +39,11 @@ app.use(express.static('client/dist'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-  })
-);
+// app.use(
+//   webpackDevMiddleware(compiler, {
+//     publicPath: webpackConfig.output.publicPath,
+//   })
+// );
 
 app.post('/tripSchedule', (req, res) => {
   try {
