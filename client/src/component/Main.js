@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Component from '../core/Component.js';
 import store from '../store/store.js';
 import MainPost from './Main/MainPost.js';
