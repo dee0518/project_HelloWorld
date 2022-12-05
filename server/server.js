@@ -80,9 +80,7 @@ app.post('/logout', (req, res) => {
   }
 });
 
-const router = express.Router();
-
-router.get('/trip-log', (req, res) => {
+app.post('/trip-log', (req, res) => {
   try {
     const { category, keyword } = req.query;
 
