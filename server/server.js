@@ -81,6 +81,7 @@ app.post('/logout', (req, res) => {
 });
 
 app.get('/trip-log', (req, res) => {
+  console.log('여기인가');
   try {
     const { category, keyword } = req.query;
 
