@@ -80,7 +80,7 @@ app.post('/logout', (req, res) => {
   }
 });
 
-app.get('https://project-hello-world-three.vercel.app/main/trip-log', (req, res) => {
+app.get('/trip-log', (req, res) => {
   try {
     const { category, keyword } = req.query;
 
