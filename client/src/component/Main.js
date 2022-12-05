@@ -20,7 +20,7 @@ class Main extends Component {
           ...store.state.localCommon,
           path: window.location.pathname,
         },
-        tripSchedules: [...mainTripSchedules.data],
+        tripSchedules: [...result.data],
       };
     } catch (e) {
       console.error(e);
