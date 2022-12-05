@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-// const webpack = require('webpack');
-// const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 const users = require('../fake-data/user');
 const tripSchedules = require('../fake-data/tripSchedules');
-// const webpackConfig = require('../client/webpack.config');
+const webpackConfig = require('../client/webpack.config');
 // test comment
-// const compiler = webpack(webpackConfig);
+const compiler = webpack(webpackConfig);
 
 require('dotenv').config();
 
@@ -39,11 +39,11 @@ app.use(express.static('client/dist'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(
-//   webpackDevMiddleware(compiler, {
-//     publicPath: webpackConfig.output.publicPath,
-//   })
-// );
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+  })
+);
 
 app.post('/tripSchedule', (req, res) => {
   try {
@@ -85,7 +85,7 @@ app.post('/trip-log', (req, res) => {
 
     const responseSchedules = tripSchedules.processMainTripSchedules(category, keyword);
 
-    res.json({
+    res.end({
       status: 200,
       data: responseSchedules,
     });
