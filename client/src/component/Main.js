@@ -23,6 +23,7 @@ class Main extends Component {
   }
 
   render() {
+    console.log('main render');
     const {
       localMain: { selectedCardId },
       tripSchedules,
