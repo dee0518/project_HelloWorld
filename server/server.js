@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const CopyPlugin = require('copy-webpack-plugin');
+const cors = require('cors');
 const users = require('../fake-data/user');
 const tripSchedules = require('../fake-data/tripSchedules');
 const webpackConfig = require('../client/webpack.config');
@@ -35,6 +36,19 @@ const auth = (req, res, next) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
   }
 };
+
+const corsList = ['https://project-hello-world-three.vercel.app'];
+const corsOptions = {
+  origin(origin, callback) {
+    if (corsList.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.static('client/dist'));
 app.use(express.json());
@@ -80,7 +94,7 @@ app.post('/logout', (req, res) => {
   }
 });
 
-app.get('/trip-log', (req, res) => {
+app.post('/trip-log', (req, res) => {
   try {
     const { category, keyword } = req.query;
 
