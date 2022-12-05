@@ -86,7 +86,7 @@ app.get('/trip-log', (req, res) => {
 
     const responseSchedules = tripSchedules.processMainTripSchedules(category, keyword);
 
-    res.send(responseSchedules);
+    res.status(200).send(responseSchedules);
   } catch (e) {
     console.error(e);
   }
