@@ -4,6 +4,8 @@ import { Header, Footer } from './component/index.js';
 import { routes } from './core/router.js';
 import store from './store/store.js';
 
+console.log('app');
+
 class App extends Component {
   constructor() {
     super();

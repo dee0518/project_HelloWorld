@@ -3,6 +3,8 @@ import Component from '../core/Component.js';
 import store from '../store/store.js';
 import MainPost from './Main/MainPost.js';
 
+console.log('main');
+
 class Main extends Component {
   async init() {
     console.log('init');

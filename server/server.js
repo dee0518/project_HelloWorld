@@ -81,8 +81,10 @@ app.post('/logout', (req, res) => {
 });
 
 app.get('/trip-log', (req, res) => {
+  console.log('trip');
   try {
     const { category, keyword } = req.query;
+    console.log(req.query);
 
     const responseSchedules = tripSchedules.processMainTripSchedules(category, keyword);
 
