@@ -7,7 +7,7 @@ class Main extends Component {
   async init() {
     try {
       const query = window.location.search;
-
+      console.log(query);
       const mainTripSchedules = await axios.get(`/trip-log${query}`);
       store.state = {
         localCommon: {
