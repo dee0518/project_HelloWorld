@@ -14,7 +14,7 @@ class App extends Component {
     const $header = new Header().render();
     const $main = routes();
     const $footer = new Footer().render();
-
+    console.log($main);
     return `
       ${$header}
       ${$main}
@@ -22,14 +22,16 @@ class App extends Component {
     `;
   }
 
-  async fetchUserInfo(e) {
+  async fetchUserInfo() {
     // userInfo
     try {
       const userInfo = await axios.post('/userInfo', {});
       store.state = {
         userInfo: { ...store.state.userInfo, ...userInfo.data },
       };
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   addEventListener() {
