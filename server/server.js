@@ -88,7 +88,8 @@ app.get('/trip-log', (req, res) => {
 
     res.status(200).send(JSON.stringify(responseSchedules));
   } catch (e) {
-    console.error(e);
+    // console.error(e);
+    res.status(401).send({ error: '잘못된 정보' });
   }
 });
 
