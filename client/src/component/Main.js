@@ -7,11 +7,13 @@ console.log('main');
 
 class Main extends Component {
   async init() {
-    console.log('init');
-    console.log(window.location.search);
+    // console.log('init');
+    // console.log(window.location.search);
     try {
       const query = window.location.search;
+
       const mainTripSchedules = await axios.get(`/trip-log${query}`);
+      console.log(mainTripSchedules);
       store.state = {
         localCommon: {
           ...store.state.localCommon,
