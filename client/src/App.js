@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import axios from 'axios';
 import Component from './core/Component.js';
 import { Header, Footer } from './component/index.js';
 import { routes } from './core/router.js';
@@ -16,7 +17,7 @@ class App extends Component {
     const $header = new Header().render();
     const $main = routes();
     const $footer = new Footer().render();
-    console.log($main);
+
     return `
       ${$header}
       ${$main}

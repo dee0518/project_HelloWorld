@@ -11,7 +11,7 @@ class Main extends Component {
     console.log(window.location.search);
     try {
       const query = window.location.search;
-      const mainTripSchedules = await axios.get(`https://project-hello-world-three.vercel.app/main/trip-log${query}`);
+      const mainTripSchedules = await axios.get(`/trip-log${query}`);
       store.state = {
         localCommon: {
           ...store.state.localCommon,
