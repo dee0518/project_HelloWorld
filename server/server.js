@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
+// const webpack = require('webpack');
+// const webpackDevMiddleware = require('webpack-dev-middleware');
 const users = require('../fake-data/user');
 const tripSchedules = require('../fake-data/tripSchedules');
-const webpackConfig = require('../client/webpack.config');
+// const webpackConfig = require('../client/webpack.config');
 // test comment
-const compiler = webpack(webpackConfig);
+// const compiler = webpack(webpackConfig);
 
 require('dotenv').config();
 
