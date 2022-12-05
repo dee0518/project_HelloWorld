@@ -2,9 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "bundle.js",
+      "src": "server/server.js",
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
+  "routes": [{ "src": "/[^.]+", "dest": "server/server.js", "status": 200 }]
 }
