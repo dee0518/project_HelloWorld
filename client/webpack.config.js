@@ -53,9 +53,6 @@ module.exports = {
       filename: 'style.css',
       chunkFilename: 'style.css',
     }),
-    new CopyPlugin({
-      patterns: [{ from: 'vercel.json' }],
-    }),
   ],
   devtool: 'source-map',
 };
