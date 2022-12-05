@@ -11,6 +11,7 @@
     "heroku-postbuild": "webpack --config ./client/webpack.config.js",
     "sass": "sass client/assets/scss:client/css",
     "watch": "npm run sass -- --watch",
+    "build": "webpack --config ./client/webpack.config.js",
     "dev": "webpack-dev-server --open"
   },
   "repository": {
