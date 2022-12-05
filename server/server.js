@@ -85,8 +85,10 @@ app.post('/trip-log', (req, res) => {
 
     const responseSchedules = tripSchedules.processMainTripSchedules(category, keyword);
 
-    res.header('Access-Control-Allow-Origin', '*');
-    res.status(200).send(JSON.stringify(responseSchedules));
+    res.json({
+      status: 200,
+      data: responseSchedules,
+    });
   } catch (e) {
     // console.error(e);
     res.status(401).send({ error: '잘못된 정보' });
