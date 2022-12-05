@@ -36,7 +36,7 @@ const auth = (req, res, next) => {
   }
 };
 
-app.use(express.static('dist'));
+// app.use(express.static('dist'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
