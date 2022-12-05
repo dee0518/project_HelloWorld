@@ -39,7 +39,7 @@ const auth = (req, res, next) => {
 
 const corsList = ['https://project-hello-world-three.vercel.app'];
 const corsOptions = {
-  origin(origin, callback) {
+  origin: (origin, callback) => {
     if (corsList.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
