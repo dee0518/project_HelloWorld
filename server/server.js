@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
+const exp = require('constants');
 const users = require('../fake-data/user');
 const tripSchedules = require('../fake-data/tripSchedules');
 const webpackConfig = require('../client/webpack.config');
@@ -79,7 +80,9 @@ app.post('/logout', (req, res) => {
   }
 });
 
-app.post('/trip-log', (req, res) => {
+const router = express.Router();
+
+router.get('/trip-log', (req, res) => {
   try {
     const { category, keyword } = req.query;
 
