@@ -86,10 +86,7 @@ app.get('/trip-log', (req, res) => {
 
     const responseSchedules = tripSchedules.processMainTripSchedules(category, keyword);
     console.log(responseSchedules);
-    res.end({
-      status: 200,
-      data: JSON.stringify(responseSchedules),
-    });
+    res.send(responseSchedules);
   } catch (e) {
     // console.error(e);
     res.status(401).send({ error: '잘못된 정보' });
