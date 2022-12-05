@@ -11,8 +11,8 @@ class Main extends Component {
     // console.log(window.location.search);
     try {
       const query = window.location.search;
-
-      const mainTripSchedules = await axios.get(`/trip-log${query}`);
+      console.log(axios);
+      const mainTripSchedules = await fetch(`/trip-log${query}`);
       console.log(mainTripSchedules);
       store.state = {
         localCommon: {

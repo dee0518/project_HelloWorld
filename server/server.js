@@ -37,7 +37,7 @@ const auth = (req, res, next) => {
 };
 
 app.use(express.static('client/dist'));
-app.use(express.json());
+app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
@@ -80,15 +80,15 @@ app.post('/logout', (req, res) => {
   }
 });
 
-app.post('/trip-log', (req, res) => {
+app.get('/trip-log', (req, res) => {
   try {
     const { category, keyword } = req.query;
 
     const responseSchedules = tripSchedules.processMainTripSchedules(category, keyword);
-
+    console.log(responseSchedules);
     res.end({
       status: 200,
-      data: responseSchedules,
+      data: JSON.stringify(responseSchedules),
     });
   } catch (e) {
     // console.error(e);
