@@ -13,7 +13,8 @@ class Main extends Component {
       const query = window.location.search;
       console.log(axios);
       const mainTripSchedules = await fetch(`/trip-log${query}`);
-      console.log(mainTripSchedules.json());
+      const result = await mainTripSchedules.json();
+      console.log(result);
       store.state = {
         localCommon: {
           ...store.state.localCommon,
